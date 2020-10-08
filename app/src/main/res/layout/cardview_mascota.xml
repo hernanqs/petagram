@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvMascota"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_cardview_mascota"
+    android:gravity="center"
+>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/tvFotoCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/hueso_blanco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hueso_blanco"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/margin_elementos_cardview_mascota"
+                android:layout_marginRight="@dimen/margin_elementos_cardview_mascota"
+                >
+            </ImageView>
+             <TextView
+                 android:id="@+id/tvNombreCV"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_toRightOf="@+id/hueso_blanco"
+                 android:layout_marginLeft="@dimen/margin_elementos_cardview_mascota"
+                 android:layout_marginRight="@dimen/margin_elementos_cardview_mascota"
+                 >
+             </TextView>
+
+            <TextView
+                android:id="@+id/tvRatingCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/hueso_amarillo"
+                android:layout_marginLeft="@dimen/margin_elementos_cardview_mascota"
+                android:layout_marginRight="@dimen/margin_elementos_cardview_mascota"
+                >
+            </TextView>
+            <ImageView
+                android:id="@+id/hueso_amarillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hueso_amarillo"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_elementos_cardview_mascota"
+                android:layout_marginRight="@dimen/margin_elementos_cardview_mascota"
+                >
+            </ImageView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
