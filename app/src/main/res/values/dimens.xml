@@ -3,4 +3,9 @@
     <dimen name="elevation_actionbar">4dp</dimen>
     <dimen name="margin_cardview_mascota">15dp</dimen>
     <dimen name="margin_elementos_cardview_mascota">5dp</dimen>
+    <dimen name="margin_cardview_foto">9dp</dimen>
+    <dimen name="margin_elementos_cardview_foto">3dp</dimen>
+    <dimen name="nombre_perfil">20sp</dimen>
+    <dimen name="size_titulo">20sp</dimen>
+    <dimen name="padding_texto">5dp</dimen>
 </resources>

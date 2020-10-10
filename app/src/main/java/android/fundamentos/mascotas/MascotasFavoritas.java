@@ -26,9 +26,9 @@ public class MascotasFavoritas extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         android.widget.ImageView mFavoritas = (android.widget.ImageView) miActionBar.findViewById(R.id.mFavoritas);
-        mFavoritas.setVisibility(android.view.View.GONE);
+        mFavoritas.setVisibility(android.view.View.INVISIBLE);
+
         listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -39,8 +39,15 @@ public class MascotasFavoritas extends AppCompatActivity {
         inicializarListaMascotas();
         inicializarAdaptador();
     }
+
+    private ArrayList<androidx.fragment.app.Fragment> agregarFragments() {
+        ArrayList<androidx.fragment.app.Fragment> fragments = new ArrayList<>();
+        fragments.add(new PerfilFragment());
+        return fragments;
+    }
+
     public void inicializarAdaptador() {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
     public void inicializarListaMascotas () {
@@ -58,6 +65,21 @@ public class MascotasFavoritas extends AppCompatActivity {
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         getMenuInflater().inflate(R.menu.menu_opciones, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mContacto:
+                android.content.Intent intent = new android.content.Intent(this, Contacto.class);
+                startActivity(intent);
+                break;
+            case R.id.mAbout:
+                android.content.Intent intent2 = new android.content.Intent(this, About.class);
+                startActivity(intent2);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

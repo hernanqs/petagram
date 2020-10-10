@@ -3,4 +3,7 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#aaaaaa</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="colorTitulo">#000000</color>
+    <color name="colorTexto">#333333</color>
+    <color name="colorTextInputText">#777777</color>
 </resources>

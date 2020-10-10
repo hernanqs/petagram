@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Petagram</string>
-    <string name="menu_about">Acerca de nosotros</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="nombre_perfil">Ronny</string>
+
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_email">Mail</string>
+    <string name="hint_mensaje">Mensaje</string>
+    <string name="boton_enviar">Enviar</string>
+    <string name="extra_nombre">nombre</string>
+    <string name="extra_email">email</string>
+    <string name="extra_mensaje">mensaje</string>
+
+    <string name="titulo_about">Acerca de nosotros</string>
+    <string name="contenido_about">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in justo enim. Proin eu malesuada lacus, in volutpat tellus. Mauris congue lectus massa, vel tempus leo vulputate id. Vestibulum tristique hendrerit dolor in aliquam. Praesent dapibus lorem ac sapien bibendum, et tincidunt velit feugiat. Fusce sollicitudin arcu sit amet ligula viverra facilisis quis elementum enim. Phasellus a euismod neque. Ut gravida ex id orci finibus sagittis. Duis eu imperdiet lectus. Proin consectetur massa est, ac eleifend urna faucibus eget. In enim magna, euismod vel tincidunt ut, lacinia ac lacus. Phasellus porta bibendum accumsan. Maecenas venenatis eros et metus laoreet varius. Cras quis hendrerit nibh. Etiam faucibus, nunc eget feugiat rutrum, dolor ligula placerat justo, ac vulputate sapien nunc quis nulla.
+    </string>
+
 </resources>

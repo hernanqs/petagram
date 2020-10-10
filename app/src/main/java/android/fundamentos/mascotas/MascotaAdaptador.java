@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
     java.util.ArrayList<Mascota> mascotas;
+    android.app.Activity activity;
 
-    public MascotaAdaptador(java.util.ArrayList<Mascota> mascotas) {
+    public MascotaAdaptador(java.util.ArrayList<Mascota> mascotas, android.app.Activity activity) {
         this.mascotas = mascotas;
+        this.activity = activity;
     }
 
-    //Inflar el layout y lo pasará al viewholder para que él obtenga los views
     @NonNull
     @Override
     public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -21,7 +22,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         return new MascotaViewHolder(v);
     }
 
-    //Asocia cada elemento de la lista con cada view
     @Override
     public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {
         Mascota mascota = mascotas.get(position);
@@ -31,7 +31,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
     @Override
-    public int getItemCount() { //Cantidad de elementos que contiene la lista
+    public int getItemCount() {
         return mascotas.size();
     }
 

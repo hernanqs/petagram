@@ -1,36 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
-    android:elevation="@dimen/elevation_actionbar"
+    android:layout_height="wrap_content"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:popupTheme="@style/Theme.AppCompat.Light">
+    app:popupTheme="@style/Theme.AppCompat.Light"
+    app:layout_scrollFlags="scroll|enterAlways"
+    >
 
-    <ImageView
-        android:id="@+id/logo_huella"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/huella">
-    </ImageView>
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/elevation_actionbar"
+        >
 
-    <TextView
-        android:id="@+id/titulo_toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:layout_gravity="center" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/miActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/mFavoritas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/estrella"
-        android:layout_gravity="right"
-        android:onClick="irAMascotasFavoritas">
-    </ImageView>
+                <ImageView
+                    android:id="@+id/logo_huella"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/huella"
+                    android:layout_alignParentLeft="true"
+                    >
+                </ImageView>
 
+                <TextView
+                    android:id="@+id/titulo_toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_centerHorizontal="true"
+                    />
 
-</androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/mFavoritas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/estrella"
+                    android:layout_alignParentRight="true"
+                    android:onClick="irAMascotasFavoritas">
+                </ImageView>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

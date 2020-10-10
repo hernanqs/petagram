@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About"
+    >
+
+    <include android:id="@+id/toolbarLayout"
+        layout="@layout/actionbar"
+        >
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/titulo_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_about"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/size_titulo"
+            android:textColor="@color/colorTitulo"
+            />
+
+        <TextView
+            android:id="@+id/contenido_about"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contenido_about"
+            android:layout_gravity="fill_vertical"
+            android:padding="@dimen/padding_texto"
+            android:textColor="@color/colorTexto"
+            />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

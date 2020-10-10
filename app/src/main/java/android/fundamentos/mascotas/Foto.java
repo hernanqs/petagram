@@ -1,9 +1,9 @@
 package android.fundamentos.mascotas;
 
-public class Mascota {
-    private String nombre;
+public class Foto {
     private int rating;
     private int imgFoto;
+
 
     public int getImgFoto() {
         return imgFoto;
@@ -13,13 +13,10 @@ public class Mascota {
         return rating;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public Mascota(int imgFoto, String nombre, int rating) {
+    public Foto(int imgFoto, int rating) {
         this.imgFoto = imgFoto;
-        this.nombre = nombre;
         this.rating = rating;
     }
+
 }

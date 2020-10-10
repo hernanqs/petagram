@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilFragment"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        >
+
+        <ImageView
+            android:id="@+id/foto_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default2_round"
+            android:layout_centerHorizontal="true"
+            >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nombre_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foto_perfil"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="@dimen/nombre_perfil"
+            android:text="@string/nombre_perfil"
+            />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nombre_perfil"
+            android:columnCount="2"
+            android:rowCount="2"
+            >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </GridLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
