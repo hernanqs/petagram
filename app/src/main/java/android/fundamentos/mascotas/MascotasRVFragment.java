@@ -1,5 +1,6 @@
 package android.fundamentos.mascotas;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-
 public class MascotasRVFragment extends androidx.fragment.app.Fragment {
     java.util.ArrayList<Mascota> mascotas;
     private androidx.recyclerview.widget.RecyclerView listaMascotas;
+
+    private android.content.Context context;
+    private ConstructorMascotas constructorMascotas;
+
+    public MascotasRVFragment(Context context) {
+        this.context = context;
+    }
 
     @Nullable
     @Override
@@ -36,16 +42,10 @@ public class MascotasRVFragment extends androidx.fragment.app.Fragment {
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, getActivity());
         listaMascotas.setAdapter(adaptador);
     }
-    public void inicializarListaMascotas () {
-        mascotas = new ArrayList<Mascota>();
 
-        //Crear mascotas
-        mascotas.add(new Mascota(R.drawable.default1, "Roxy", 3));
-        mascotas.add(new Mascota(R.drawable.default2, "Catty", 5));
-        mascotas.add(new Mascota(R.drawable.default1, "Rob", 2));
-        mascotas.add(new Mascota(R.drawable.default2, "Teddy", 4));
-        mascotas.add(new Mascota(R.drawable.default1, "Toby", 4));
-        mascotas.add(new Mascota(R.drawable.default2, "Rex", 3));
+    public void inicializarListaMascotas () {
+        constructorMascotas = new ConstructorMascotas(context);
+        mascotas = constructorMascotas.obtenerDatos();
     }
 
 }

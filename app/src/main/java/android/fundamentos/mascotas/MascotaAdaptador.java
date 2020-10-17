@@ -23,11 +23,25 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {
-        Mascota mascota = mascotas.get(position);
+    public void onBindViewHolder(@NonNull final MascotaViewHolder mascotaViewHolder, int position) {
+        final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.tvNombreCV.setText(mascota.getNombre());
-        mascotaViewHolder.tvRatingCV.setText(Integer.toString(mascota.getRating()));
+        mascotaViewHolder.tvRatingCV.setText(Integer.toString(mascota.getLikes()));
         mascotaViewHolder.tvFotoCV.setImageResource(mascota.getImgFoto());
+
+        mascotaViewHolder.btnLike.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                android.widget.Toast.makeText(activity, "Diste like a " + mascota.getNombre(),
+                        android.widget.Toast.LENGTH_SHORT).show();
+
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+                mascotaViewHolder.tvRatingCV.setText(Integer.toString(constructorMascotas.obtenerLikesmascota(mascota)));
+
+            }
+        });
+
     }
 
     @Override
@@ -39,12 +53,16 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private android.widget.TextView tvNombreCV;
         private android.widget.TextView tvRatingCV;
         private android.widget.ImageView tvFotoCV;
+        private android.widget.ImageView btnLike;
+
         public MascotaViewHolder(android.view.View itemView) {
             super(itemView);
             tvNombreCV = (android.widget.TextView) itemView.findViewById(R.id.tvNombreCV);
             tvRatingCV = (android.widget.TextView) itemView.findViewById(R.id.tvRatingCV);
             tvFotoCV = (android.widget.ImageView) itemView.findViewById(R.id.tvFotoCV);
+            btnLike = (android.widget.ImageView) itemView.findViewById(R.id.hueso_amarillo);
 
         }
     }
+
 }

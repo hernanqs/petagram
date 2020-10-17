@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<androidx.fragment.app.Fragment> agregarFragments() {
         ArrayList<androidx.fragment.app.Fragment> fragments = new ArrayList<>();
-        fragments.add(new MascotasRVFragment());
+        fragments.add(new MascotasRVFragment(this));
         fragments.add(new PerfilFragment());
         return fragments;
     }

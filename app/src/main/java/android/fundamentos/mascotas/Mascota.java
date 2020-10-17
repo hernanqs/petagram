@@ -1,25 +1,45 @@
 package android.fundamentos.mascotas;
 
 public class Mascota {
-    private String nombre;
-    private int rating;
-    private int imgFoto;
 
-    public int getImgFoto() {
-        return imgFoto;
+    public Mascota() {
     }
 
-    public int getRating() {
-        return rating;
+    private int id;
+    private String nombre;
+    private int imgFoto;
+    private int likes;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public Mascota(int imgFoto, String nombre, int rating) {
-        this.imgFoto = imgFoto;
+    public void setNombre(String nombre) {
         this.nombre = nombre;
-        this.rating = rating;
     }
+
+    public int getImgFoto() {
+        return imgFoto;
+    }
+
+    public void setImgFoto(int imgFoto) {
+        this.imgFoto = imgFoto;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
 }

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class MascotasFavoritas extends AppCompatActivity {
     java.util.ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private ConstructorMascotas constructorMascotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +51,10 @@ public class MascotasFavoritas extends AppCompatActivity {
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
-    public void inicializarListaMascotas () {
-        mascotas = new ArrayList<Mascota>();
 
-        //Crear mascotas
-        mascotas.add(new Mascota(R.drawable.default2, "Catty", 5));
-        mascotas.add(new Mascota(R.drawable.default1, "Toby", 4));
-        mascotas.add(new Mascota(R.drawable.default2, "Teddy", 4));
-        mascotas.add(new Mascota(R.drawable.default1, "Roxy", 3));
-        mascotas.add(new Mascota(R.drawable.default2, "Rex", 3));
+    public void inicializarListaMascotas () {
+        constructorMascotas = new ConstructorMascotas(getApplicationContext());
+        mascotas = constructorMascotas.obtenerDatosMascotasFavoritas();
     }
 
     @Override
